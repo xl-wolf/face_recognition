@@ -14,9 +14,9 @@ def detect(pic_path):
     face = face_detect.detectMultiScale(gray, 1.01, 50, 0, (2, 2), (350, 350))
 
     for x, y, w, h in face:
-        cv2.rectangle(img, (x, y), (x+w, y+h), color=(255, 0, 0), thickness=2)
-
-    filename = pic_path[0:-5]+'after'+pic_path[-5:]
+        cv2.rectangle(img, (x, y), (x+w, y+h), color=(0, 0, 240), thickness=2)
+    prefix, ext = pic_path.split('.')[1:]
+    filename = r'.'+prefix+'after.'+ext
     # save image 保存图片
     cv2.imwrite(filename, img)
     # 用户按下q键退出
