@@ -26,7 +26,8 @@ def detect(pic_path):
 def detect_all_pics():
     for selfPath, dirs, pics in os.walk(r'./facesSrc'):
         for pic in pics:
-            detect(selfPath+'/'+pic)
+            if('after' not in pic):
+                detect(selfPath+'/'+pic)
 
 
 if(__name__ == "__main__"):
